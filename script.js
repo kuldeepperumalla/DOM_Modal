@@ -1,13 +1,12 @@
-'use strict';
+"use strict";
 
-const modal = document.querySelector('.modal');
-const overlay = document.querySelector('.close-modal');
-const btn = document.querySelector('.show-modal');
+const modal = document.querySelector(".modal");
+const overlay = document.querySelector(".overlay");
+const btnCloseModal = document.querySelector(".close-modal");
+const btnsOpenModal = document.querySelectorAll(".show-modal");
 
-btn.addEventListener('click', function () {
-    modal.classList.remove("hidden");
-})
-
-overlay.addEventListener('click', function () {
-    modal.classList.add("hidden");
-})
+for (let i = 0; btnsOpenModal.length > i; i++) {
+    btnsOpenModal[i].addEventListener('click', function () {
+        console.log(`Button ${btnsOpenModal[i].textContent} Clicked`);
+    });
+}
